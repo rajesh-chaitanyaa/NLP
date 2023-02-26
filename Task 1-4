@@ -1,0 +1,48 @@
+TASK 1
+
+f = open('/Users/rajeshkannan/Desktop/English.csv')
+contents = f.read()
+print(contents)
+
+import json
+my_dict = open('/Users/rajeshkannan/Desktop/English.csv')
+results = json.dumps(list(my_dict))
+print(results)
+
+from googletrans import Translator
+file_translate = Translator()
+result = translator.translate(results, dest='fr')
+print(result.text)
+
+
+TASK 2
+
+!pip install textblob
+from textblob import Word
+from textblob import TextBlob
+
+!pip install autocorrect
+import autocorrect
+word ='nIndia'
+result = autocorrect.spell(word)
+print(result)
+
+def correct_sentence(sentence):
+    corrected_words = []
+    for word in sentence.split():
+        corrected_words.append(autocorrect.spell(word))
+    return ' '.join(corrected_words)
+    
+    
+ correct_sentence("I am goint to the stoer to by some grocerees.")
+print(correct_sentence)
+
+
+TASK 4
+
+!pip install SpeechRecognition
+!pip install pyaudio
+import speech_recognition as sr
+
+
+r = sr.Recognizer()
